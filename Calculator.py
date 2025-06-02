@@ -1,3 +1,4 @@
+import os
 def add(num1,num2):
     return num1+num2
 def sub(num1,num2):
@@ -14,11 +15,11 @@ op_dict={
 }
 def primary():
 
-    a=int(input("enter the first number"))
+    a=float(input("enter the first number"))
     flag=True
     while flag:
         op = input("enter the operation\n+\n-\n*\n")
-        b=int(input("enter the next number"))
+        b=float(input("enter the next number"))
 
         wanted=op_dict[op]
         result=wanted(a,b)
@@ -28,6 +29,7 @@ def primary():
         if ans=="y":
             a = result
         elif ans=="n":
+            os.system('cls')
             primary()
         else:
             exit(0)
